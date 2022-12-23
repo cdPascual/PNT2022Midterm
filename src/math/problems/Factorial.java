@@ -9,5 +9,17 @@ public class Factorial {
          *
          */
 
+        int num = 3;
+        int change = num;
+
+        System.out.println(factorial(num));
+
+    }
+    public static int factorial(int a){
+        if(a==0)
+            return 1;
+
+       return a*factorial(a-1);
+
     }
 }

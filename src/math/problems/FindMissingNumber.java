@@ -9,6 +9,28 @@ public class FindMissingNumber {
          * Write java code to find the missing number from the array. Write static helper method to find it.
          */
          int [] array = new int[]{10, 2, 1, 4, 5, 3, 7, 8, 6};
+         int n =10;
+         int missing;
 
+         missing=missingNum(array,n);
+
+         System.out.println(missing);
+
+
+    }
+
+    public static int missingNum(int[] a, int size){
+        int [] temp = new int[size];
+        int answer =0;
+
+        for(int i=0;i<a.length;i++)
+            if(a[i]!=0)
+                temp[a[i]-1]=a[i];
+
+        for(int i=0;i<temp.length;i++)
+            if (temp[i] == 0)
+                answer = i + 1;
+
+        return answer;
     }
 }

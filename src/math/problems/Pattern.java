@@ -8,6 +8,31 @@ public class Pattern {
 		 *
 		 *
 		 */
+
+		int n=100;
+		int decrement=1;
+		int count =1;
+		int i=n;
+
+		while(i>=0){
+			System.out.print(n);
+			i--;
+			n-=decrement;
+			if(count==10){
+				decrement++;
+				count=1;
+			}else{
+				count++;
+			}
+
+			if(n==0) {
+				System.out.print(", "+0);
+				break;
+			}
+			else
+				System.out.print(", ");
+
+		}
 		
 
 
