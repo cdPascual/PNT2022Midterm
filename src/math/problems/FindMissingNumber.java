@@ -9,18 +9,17 @@ public class FindMissingNumber {
          * Write java code to find the missing number from the array. Write static helper method to find it.
          */
          int [] array = new int[]{10, 2, 1, 4, 5, 3, 7, 8, 6};
-         int n =10;
          int missing;
 
-         missing=missingNum(array,n);
+         missing=missingNum(array);
 
          System.out.println(missing);
 
 
     }
 
-    public static int missingNum(int[] a, int size){
-        int [] temp = new int[size];
+    public static int missingNum(int[] a){
+        int [] temp = new int[a.length+1];
         int answer =0;
 
         for(int i=0;i<a.length;i++)

@@ -12,8 +12,18 @@ public class PrimeNumber {
 		 * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
 		 *
 		 */
-
-
+		int max = 1000000;
+		for (int num = 2; num <= max; num++) {
+			boolean isPrime = true;
+			for (int i = 2; i <= Math.sqrt(num); i++) {
+				if (num % i == 0) {
+					isPrime = false;
+					break;
+				}
+			}
+			if (isPrime == true)
+				System.out.println(num);
+		}
 
 	}
 

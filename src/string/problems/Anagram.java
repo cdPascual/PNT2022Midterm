@@ -27,7 +27,6 @@ public class Anagram {
 
 
         for(int i=0;i<temp1.length;i++) {
-            System.out.println(temp1[i]+" "+temp2[i]);
             if(temp1[i]!=temp2[i])
                 return false;
         }
