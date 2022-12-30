@@ -9,7 +9,7 @@ public class Factorial {
          *
          */
 
-        int num = 3;
+        int num = 5;
         int change = num;
 
         System.out.println(factorial(num));
