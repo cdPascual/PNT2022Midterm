@@ -178,37 +178,26 @@ public class Sort {
         return list;
     }
 
-    void heapDown(int a[], int top, int bottom){
-        int max;
+    void heapDown(int a[], int length, int i){
         int left;
         int right;
+        int largest;
 
-        left = (2*top)+1;
-        right = (2*top)+2;
+        largest=i;
+        left = (2*i)+1;
+        right = (2*i)+2;
 
-        if(left<=bottom)
-        {
-            if(left==bottom)
-            {
-                max=left;
-            }
-            else
-            {
-                if(a[left]>a[right])
-                    max=left;
-                else
-                    max=right;
-            }
-
-            if(a[top]<a[max])
-            {
-                swap(a, top, max);
-                heapDown(a,max,bottom);
-            }
+        if(left<length && a[left]>a[largest])
+            largest=left;
+        if(right<length&&a[right]>a[largest])
+            largest=right;
+        if(largest!=i) {
+            swap(a, i, largest);
+            heapDown(a, length, largest);
         }
-    }
 
-    void createMaxHeap(int a[],int top,int bottom)
+    }
+/*    void createMaxHeap(int a[],int top,int bottom)
     {
         if (top!=bottom)
         {
@@ -216,24 +205,23 @@ public class Sort {
         }
         heapDown(a, top, bottom);
     }
-
-    public int [] heapSort(int [] array,int top, int bottom){
+*/
+    public int [] heapSort(int [] array){
         final long startTime = System.currentTimeMillis();
-        int [] list = array;
+        //int [] list = array;
         //implement here
-        createMaxHeap(list, top, bottom);
-
-        while(bottom!=top)
-        {
-            swap(list, top, bottom);
-            bottom--;
-            heapDown(list, top, bottom);
+        for(int i = array.length/2-1;i>=0;i--){
+            heapDown(array, array.length,i);
+        }
+        for(int i= array.length-1;i>=0;i--){
+            swap(array,0,i);
+            heapDown(array,i,0);
         }
 
         final long endTime = System.currentTimeMillis();
         final long executionTime = endTime - startTime;
         this.executionTime = executionTime;
-        return list;
+        return array;
     }
 
 

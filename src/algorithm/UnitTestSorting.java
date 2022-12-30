@@ -57,7 +57,7 @@ public class UnitTestSorting {
 
         //test heap sort
         try {
-            Assert.assertArrayEquals(sortedArray,sort.heapSort(unSortedArray6,0,unSortedArray5.length-1));
+            Assert.assertArrayEquals(sortedArray,sort.heapSort(unSortedArray6));
         }catch(Exception ex){
             ex.getMessage();
         }
