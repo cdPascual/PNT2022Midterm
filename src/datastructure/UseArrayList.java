@@ -27,7 +27,6 @@ public class UseArrayList {
 		for (String num:list) {
 			System.out.println(num);
 		}
-	;
 
 		list.remove(1);
 		list.remove(2);
