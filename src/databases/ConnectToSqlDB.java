@@ -100,6 +100,24 @@ public class ConnectToSqlDB {
         }
     }
 
+    public void createSqlTableForStringArray(String tableName, String columnName)
+    {
+        try {
+            connectToSqlDatabase();
+            ps = connect.prepareStatement("DROP TABLE IF EXISTS `"+tableName+"`;");
+            ps.executeUpdate();
+            ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` (`wordPlace` int(11) NOT NULL AUTO_INCREMENT, "+columnName+" varchar(255),  PRIMARY KEY (`wordPlace`) );");
+            ps.executeUpdate();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void insertDataFromStringToSqlTable(String ArrayData, String tableName, String columnName)
     {
         try {
