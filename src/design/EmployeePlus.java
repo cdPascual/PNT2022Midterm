@@ -11,8 +11,9 @@ public abstract class EmployeePlus implements Employee{
     private String lastName;
     private String department;
     private String startDate;
-    private int employeeID;
-    private double hourlyRate;
+
+    int employeeID;
+    int hourlyRate;
 
     //Constructors
     public EmployeePlus(int id){
@@ -22,7 +23,7 @@ public abstract class EmployeePlus implements Employee{
 
     //setters
     public void setFirstName(){
-        //return employeeID;
+
     }
     public void setLastName(){
 
@@ -33,57 +34,51 @@ public abstract class EmployeePlus implements Employee{
     public void setHourlyRate(){
 
     }
-    public void setStartDate){
+    public void setStartDate(){
 
     }
     public void setDepartment(){
+
+    }
+    public void setTotalEmployees(){
 
     }
 
     //getters
 
     public String getFirstName(){
+        return firstName;
 
     }
     public String getLastName(){
-
+        return lastName;
     }
     public String getDepartment(){
-
-    }
-    public int getEmployeeID(){
-
+        return department;
     }
     public int getTotalEmployees(){
-
+        return totalEmployees;
     }
 
 
 
     //employeeId() will return employee id.
     public int employeeId(){
+        return employeeID;
 
     }
 
     //employeeName() will return employee name
-    public String employeeName(String s) {
-
+    public String employeeName() {
+        return (firstName+" "+lastName);
     }
 
     //assignDepartment() will assign employee to departments
-    public void assignDepartment(){
-
-
-    }
+    public abstract void assignDepartment();
 
     //calculate employee salary
-    public int calculateSalary(){
-
-    }
+    public abstract int calculateSalary();
 
     //employee benefit
-    public void benefitLayout(){
-
-    }
-
+    public abstract void benefitLayout();
 }
